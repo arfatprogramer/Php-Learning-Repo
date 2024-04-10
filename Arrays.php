@@ -28,7 +28,7 @@ foreach($ar as $v){
     echo ucwords( $v)."<br>";
 }
 
-// Assacivativee Array
+// Assosativatie Array
 $arr2=array("Arfat"=>"CEO","muskan"=>"Manager","nisha"=>"Employee");
 print_r($arr2);
 echo "<br><br>";
