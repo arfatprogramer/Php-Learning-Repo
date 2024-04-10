@@ -4,21 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Php Tut1</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Hello </h1>
-    <?php 
-    // for single line comment
-    /* Multi
-     line
-      comment
-    */
-    # single line comment
+    <?php
+    $i = 1;
+    while ($i <= 10) {
+         ?>
+        <p><?php echo $i ?></p>
+        <!-- <p><?php echo $i ?></p> -->
 
-    echo "<h1> Hi  Mo Arfat Ansari</h1>";
-
+    <?php $i++;
+    }
     ?>
 </body>
 
