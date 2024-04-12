@@ -45,7 +45,6 @@
     echo "<br>";
 
     /* operators
-
     Arithmetic  + - * / % **(Power)
     increment/decriment  ++/--
     Operator preecedent 
@@ -65,8 +64,6 @@
 
     //Php  Function
     # Sting Function
-
-    // $Name  is pre define 
     echo strlen($Name)."<br>";
     echo str_replace("A","B",$Name)."<br>";
     echo str_ireplace("a","b",$Name)."<br>";
@@ -83,7 +80,6 @@
     // is_string()
 
     #math function
-
     echo pi()."<br>";
     echo abs(-34)."<br>";
     echo sqrt(25)."<br>";
