@@ -12,7 +12,7 @@ $con =new mysqli($servername,$username,$password,$dbname);
 if($con ->connect_error){
     die("Connection Failed.".$con->connect_errno);
 }
-echo "Connection Sussfully"
+
 
 // try{
 // $con=mysqli_connect($servername,$username,$password,$dbname);

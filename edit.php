@@ -1,18 +1,27 @@
 <?php
 
-include("./sqli/phpcon.php");  
+include("./sqli/phpcon.php"); 
 
-if(isset($_GET["submit"])){
-    extract($_GET);
-    
-    // echo$username;
+ if(isset($_GET["id"])){
+    $id=$_GET["id"];
     // echo$password;
-    $ins="INSERT INTO demo(Name,Age)VALUES('$username','$password')";
+    $ins="SELECT * FROM demo WHERE ID = $id ";
     $rees=$con->query($ins);
-    if($rees)
-        echo"data inserted";
-    else
-        echo"problem Occurse";
+    $result=mysqli_fetch_assoc($rees);
+    extract($result);
+ }
+if(isset($_POST["submit"])){
+    print_r($_POST) ;
+    extract($_POST) ; 
+    $upd=" UPDATE demo SET Name='$username', Age=$password where ID={$_GET["id"]}";
+    $upds=$con->query($upd);
+
+    if($upds) 
+    echo"updated";
+else
+echo"invalid";
+  
+   
 }
 
 
@@ -25,7 +34,7 @@ if(isset($_GET["submit"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login form</title>
+    <title>edit user</title>
     <style>
         .form {
 
@@ -49,17 +58,17 @@ if(isset($_GET["submit"])){
 <body>
     <div class="main">
         <div class="form">
-            <form action="index.php" method="get">
-                <h1>Login form</h1>
+            <form action="edit.php?id=<?php echo $_GET["id"];?>" method="POST">
+                <h1>Edit user</h1>
                 <div class="form1">
                     <label for="username">User Name</label>
 
-                    <input type="text" name="username" id="username ">
+                    <input type="text" name="username" id="username " value="<?php echo $Name ?>">
                 </div>
                 <div class="form1">
                     <label for="password">Password
                     </label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password"value="<?php echo $Age ?>">
                 </div>
                 <div class="form1">
                     <input type="submit" name="submit" value="submit">
